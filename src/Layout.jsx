@@ -18,7 +18,6 @@ export function Layout () {
 
 }
 
-
 function Navcontainer () {
 
   return (

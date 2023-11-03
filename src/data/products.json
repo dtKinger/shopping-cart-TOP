@@ -26,6 +26,42 @@
   {
     "id": 2,
     "title": "A green dress",
+    "price": 59.99,
+    "description": "It only comes in green, sorry not sorry!",
+    "category": "womens",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 90
+    }
+  },
+  {
+    "id": 3,
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V",
+    "price": 109.95,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+    "category": "womens",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 4,
+    "title": "What the Actual?",
+    "price": 99.95,
+    "description": "Take it with you or leave it at home. It wants to be on you and in your closet.",
+    "category": "mens",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 45
+    }
+  },
+  {
+    "id": 5,
+    "title": "A green dress",
     "price": 69.99,
     "description": "It only comes in green, sorry not sorry!",
     "category": "men's clothing",

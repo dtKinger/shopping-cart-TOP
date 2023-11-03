@@ -1,37 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>console.log(json))
-
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className=''>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='flex-col p-8 bg-black text-white min-h-screen min-w-fit'>
+
+    <h1 className='text-center'>Welcome!</h1>
+
+      <div className="p-4">
+        <p>We caught a vibe</p>
+        <p>Baby, are you coming for the ride?</p>
+        <p>When I look into your eyes </p>
+        <p>I just wanna hold you all night</p>
       </div>
-      <h1 className='text-red-600 p-2'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="middle-center text-center p-4">
+        <p>Maybe we can take a drive</p>
+        <p>Baby, we can hit the 405</p>
+        <p>Hypnotized by the lights</p>
+        <p>Man this must be the life</p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className="bottom-right float-right p-4">
+        <p>Meet me at our spot</p>
+        <p>Got something I wanna show you</p>
+        <p>Meet me at our spot</p>
+        <p>They can&apos;t find us there</p>
+      </div>
+    </div>
     </>
   )
 }

@@ -16,7 +16,10 @@ export default function Router () {
   ]);
 
   return (
-    <RouterProvider router={router} />
+    <RouterProvider 
+      router={router}
+      fallbackElement={<p>Loadingz...</p>}
+    />
   )
 }
 
