@@ -10,7 +10,8 @@ export default function Router () {
     },
     {
       path: "/shop",
-      element: <ProductList />
+      element:
+        <ProductList />
     },
   ]);
 
