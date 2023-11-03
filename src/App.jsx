@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className='flex justify-center'>
+      <div className=''>
         <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -16,7 +16,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1 className='text-red-600'>Vite + React</h1>
+      <h1 className='text-red-600 p-2'>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

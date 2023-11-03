@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "mens",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 1,
+    "title": "What the Actual?",
+    "price": 99.95,
+    "description": "Take it with you or leave it at home. It wants to be on you and in your closet.",
+    "category": "mens",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "rating": {
+      "rate": 4.9,
+      "count": 45
+    }
+  },
+  {
+    "id": 2,
+    "title": "A green dress",
+    "price": 69.99,
+    "description": "It only comes in green, sorry not sorry!",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 90
+    }
+  }
+]
