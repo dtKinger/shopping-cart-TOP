@@ -90,3 +90,8 @@ button:focus-visible {
   padding: 10px;
   border-radius: 5px;
 }
+
+.sticky-bumper{
+  height: 56px;
+  width: 100%;
+}

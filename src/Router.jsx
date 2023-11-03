@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductList from "./routes/ProductList.jsx"
 
 export default function Router () {
-  const router = createBrowserRouter([
+  const routerZ = createBrowserRouter([
     {
       path: "/",
       element: <Layout />,
@@ -17,8 +17,8 @@ export default function Router () {
 
   return (
     <RouterProvider 
-      router={router}
-      fallbackElement={<p>Loadingz...</p>}
+      router={routerZ}
+      // fallbackElement={<p>Loadingz...</p>}
     />
   )
 }

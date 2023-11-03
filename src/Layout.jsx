@@ -1,3 +1,5 @@
+import "./index.css"
+
 // import { useState } from 'react'
 import {Link, Outlet} from "react-router-dom";
 
@@ -6,31 +8,34 @@ export function Layout () {
 
   return (
     <>
-    <div className="
-      my-nav
-      flex
-      space-between
-      items-center">
-    <Navcontainer />
-    </div>
-    <Outlet />
+      <Navcontainer />
+      <GhostNav />
+      <Outlet />  
     </>
   )
 
 }
 
+function GhostNav () {
+  return (
+    <div className="sticky-bumper"></div>
+  )
+}
+
 function Navcontainer () {
 
   return (
-    
+    <>
     <div className="
       flex
       justify-between
       border
       border-black
       min-w-full
-      min-h-full
-      p-4"
+      p-4
+      fixed
+      z-10
+      bg-white"
     >
     <nav>
       <ul className="
@@ -48,7 +53,7 @@ function Navcontainer () {
       <Cart  />
     </div>
     </div>
-    
+    </>
   )
 }
 

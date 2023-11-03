@@ -6,6 +6,7 @@ function App() {
     
     <div className='flex-col p-8 bg-black text-white min-h-screen min-w-fit'>
 
+    <div className="sticky-bumper"></div>
       <h1 className='text-center'>Welcome!</h1>
 
       <div className="p-4">
