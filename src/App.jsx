@@ -3,10 +3,10 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    
     <div className='flex-col p-8 bg-black text-white min-h-screen min-w-fit'>
 
-    <h1 className='text-center'>Welcome!</h1>
+      <h1 className='text-center'>Welcome!</h1>
 
       <div className="p-4">
         <p>We caught a vibe</p>
@@ -29,7 +29,6 @@ function App() {
         <p>They can&apos;t find us there</p>
       </div>
     </div>
-    </>
   )
 }
 

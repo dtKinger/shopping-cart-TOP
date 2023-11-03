@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 
 export function Layout () {
   // const [cartItems, setCartItems] = useState({})
@@ -13,6 +13,7 @@ export function Layout () {
       items-center">
     <Navcontainer />
     </div>
+    <Outlet />
     </>
   )
 
@@ -36,7 +37,7 @@ function Navcontainer () {
         flex
         gap-2"
       >
-        <li><Link to="/pages/about">About</Link></li>
+        <li><Link to="/shop">Shop Products</Link></li>
         <li>Hello</li>
         <li>Goodbye</li>
         <li>How Are</li>
