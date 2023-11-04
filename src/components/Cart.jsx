@@ -2,6 +2,9 @@ import { useState } from "react"
 
 export default function Cart ({cartItems}) {
   
+  // Show this as an after element?
+  let cartCount = cartItems.length;
+  
   const [isOpen, setIsOpen] = useState(false)
 
   if (isOpen){
@@ -9,6 +12,7 @@ export default function Cart ({cartItems}) {
       <>
       <div className="my-cart">
         <button onClick={() => setIsOpen(!isOpen)}>Cart</button>
+        <span className="relative top-5 right-5 bg-black text-white pt-1 pr-2 pb-1 pl-2 rounded-[50%]">{cartCount}</span>
       </div>
       <div className="cart-items absolute top-20 right-0 z-20 bg-white border border-black p-4 min-w-[300px]">
         <div className="text-xl"><h2>Your items:</h2></div>
@@ -19,6 +23,7 @@ export default function Cart ({cartItems}) {
   } else return (
     <div className="my-cart">
       <button onClick={() => setIsOpen(!isOpen)}>Cart</button>
+      <span className="relative top-5 right-5 bg-black text-white pt-1 pr-2 pb-1 pl-2 rounded-[50%]">{cartCount}</span>
     </div>
   )
   
