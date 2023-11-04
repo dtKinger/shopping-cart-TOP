@@ -1,6 +1,7 @@
 import allProducts from "../data/products.json";
 import "../index.css";
 import { useState } from "react";
+import QuantityPicker from "../components/QuantityPicker.jsx"
 
 export default function ProductList() {
   const [loadedImages, setLoadedImages] = useState([]);
@@ -45,16 +46,4 @@ export default function ProductList() {
       </ul>
     </>
   );
-}
-
-function QuantityPicker () {
-  const [value, setValue] = useState(0);
-
-  return (
-  <div className="quantity-picker">
-    <button onClick={() => {setValue(value + 1)}}>+</button>
-    <input className="" type="number" value={value} onChange={(value) => setValue(value)}/>
-    <button onClick={() => {setValue(value - 1)}}>&minus;</button>
-  </div>
-  )
 }
