@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function QuantityPicker (producId) {
+export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(0);
 
   return (
@@ -14,7 +14,7 @@ export default function QuantityPicker (producId) {
         }}>
           +
         </button>
-      <input className="max-w-[3rem] text-center border border-black rounded-[50%]" type="text" value={quantity} onChange={(quantity) => setQuantity((quantity))}/>
+      <input className="max-w-[3rem] text-center border border-black rounded-[50%]" type="text" value={quantity} onChange={(e) => setQuantity((e.target.value))}/>
       <button className="pt-0 pr-2 pb-0 pl-2 border border-black" onClick={() => {
         if (quantity > 0) {
           setQuantity(quantity - 1)
@@ -22,11 +22,12 @@ export default function QuantityPicker (producId) {
           &minus;
       </button>
     </div>
-    <div className="left flex max-max"><button className="pt-2 pr-4 pb-2 pl-4 border border-black" onClick={updateCart}>Add to Cart</button></div>
+    <div className="left flex max-max"><button className="pt-2 pr-4 pb-2 pl-4 border border-black" onClick={updateCart({productId})}>Add to Cart</button></div>
   </div>
   )
 }
 
-function updateCart () {
-
+function updateCart ({productId, quantity}) {
+  // console.log(productId)
+  // console.log(quantity)
 }

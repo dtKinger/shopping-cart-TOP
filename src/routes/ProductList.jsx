@@ -34,7 +34,7 @@ export default function ProductList() {
         <p className="text-4xl">${item.price}</p>
         <p>{item.description}</p>
         <p className="spacer p-2"></p>
-        <QuantityPicker />
+        <QuantityPicker productId={item.id} />
       </li>
     );
   });

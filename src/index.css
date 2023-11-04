@@ -92,6 +92,7 @@ button:focus-visible {
 }
 
 .sticky-bumper{
-  height: 56px;
+  margin: 0px;
+  height: 78px;
   width: 100%;
 }
