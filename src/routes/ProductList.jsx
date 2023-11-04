@@ -32,6 +32,8 @@ export default function ProductList() {
         <p className="text-2xl pt-4">{item.title}</p>
         <p className="text-4xl">${item.price}</p>
         <p>{item.description}</p>
+        <p className="spacer p-2"></p>
+        <QuantityPicker />
       </li>
     );
   });
@@ -43,4 +45,16 @@ export default function ProductList() {
       </ul>
     </>
   );
+}
+
+function QuantityPicker () {
+  const [value, setValue] = useState(0);
+
+  return (
+  <div className="quantity-picker">
+    <button onClick={() => {setValue(value + 1)}}>+</button>
+    <input className="" type="number" value={value} onChange={(value) => setValue(value)}/>
+    <button onClick={() => {setValue(value - 1)}}>&minus;</button>
+  </div>
+  )
 }
