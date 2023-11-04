@@ -33,6 +33,7 @@ export function Layout () {
       <div className="
         flex
         justify-between
+        items-center
         border
         border-black
         min-w-full
