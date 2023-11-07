@@ -5,18 +5,6 @@ import {Link, Outlet} from "react-router-dom";
 
 export function Layout () {
   const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      title: 'A green dress',
-      price: 59.99,
-      quantity: 1,
-    },
-    {
-      id: 3,
-      title: 'A Backpack',
-      price: 29.79,
-      quantity: 2,
-    }
   ])
 
   return (

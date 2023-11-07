@@ -1,14 +1,22 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import "../data/products.json";
+import allProducts from "../data/products.json";
 
 export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(0);
   const [cartItems, setCartItems] = useOutletContext();
 
-  const handleAddToCart = ({cartItems}) => {
-    console.log(productId)
-    console.log(`E.T. It's working!`)
+  const handleAddToCart = () => {
+
+    // If that productId isn't already in the cart
+    // If that quantity > 0
+    const stagedToAdd = allProducts.filter((item => item.id == productId))
+    
+    setCartItems((prev) => [
+      ...prev,
+      stagedToAdd[0],
+    ])
+    console.log(cartItems)
   }
 
   return (
