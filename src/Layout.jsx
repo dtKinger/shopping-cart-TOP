@@ -21,7 +21,7 @@ export function Layout () {
     <>
       <Navcontainer cartItems={cartItems} />
       <GhostNav />
-      <Outlet />  
+      <Outlet context={[cartItems, setCartItems]}/>  
     </>
   )
 
@@ -57,7 +57,6 @@ export function Layout () {
       </>
     )
   }
-  
 }
 
 function GhostNav () {
@@ -65,9 +64,5 @@ function GhostNav () {
     <div className="sticky-bumper"></div>
   )
 }
-
-
-
-
 
 export default Layout;

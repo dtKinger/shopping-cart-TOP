@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(0);
+  const [cartItems, setCartItems] = useOutletContext();
+
+  const handleAddToCart = ({cartItems}) => {
+    console.log(productId)
+    console.log(`E.T. It's working!`)
+  }
 
   return (
   <div className="quantity-picker gap-4 items-center max-h-[40px] flex justify-between">
@@ -22,12 +29,7 @@ export default function QuantityPicker ({productId}) {
           &minus;
       </button>
     </div>
-    <div className="left flex max-max"><button className="pt-2 pr-4 pb-2 pl-4 border border-black" onClick={updateCart({productId})}>Add to Cart</button></div>
+    <div className="left flex max-max"><button className="pt-2 pr-4 pb-2 pl-4 border border-black" onClick={handleAddToCart}>Add to Cart</button></div>
   </div>
   )
-}
-
-function updateCart ({productId, quantity}) {
-  // console.log(productId)
-  // console.log(quantity)
 }

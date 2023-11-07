@@ -3,7 +3,7 @@ import "../index.css";
 import { useState } from "react";
 import QuantityPicker from "../components/QuantityPicker.jsx"
 
-export default function ProductList() {
+export default function ProductList({cartItems, onAddToCart}) {
   const [loadedImages, setLoadedImages] = useState([]);
 
   function handleLoadedImg(itemId) {
