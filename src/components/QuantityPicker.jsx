@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
+import "../data/products.json";
 
 export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(0);
