@@ -37,7 +37,12 @@ const CartItemsList = ({cartItems}) => {
   if (cartItems !== null){
     let subtotal = 0;
     const cartItemsList = cartItems.map((item) => {
-      subtotal += (item.price * item.quantity);
+      if (item.price && item.quantity){
+        subtotal += (item.price * item.quantity );
+      } else {
+        subtotal = `There was an issue calculating this.`
+      }
+      
       return (
         <li key={item.id}><span className="
         relative text-center bg-green-500 text-white pl-1 pr-1 rounded-[50%]"
