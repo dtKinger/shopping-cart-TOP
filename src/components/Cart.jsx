@@ -4,6 +4,7 @@ export default function Cart ({cartItems}) {
 
   const [isOpen, setIsOpen] = useState(false)
   // Show this as an after element?
+  
   let cartCount = cartItems.length;
 
   const CartButton = () => {
