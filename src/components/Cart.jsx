@@ -5,6 +5,13 @@ export default function Cart ({cartItems}) {
   const [isOpen, setIsOpen] = useState(false)
   const [cartCount, setCartCount] = useState(0);
   
+  const showCartObject = () => {
+    alert(`
+    The following would be submit as JSON to a checkout:
+    ${JSON.stringify(cartItems)}
+    `)
+  }
+  
   if (cartItems && cartItems.length > 0) {
     useEffect(() => {
       let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
@@ -27,7 +34,10 @@ export default function Cart ({cartItems}) {
       <CartButton />
       <div className="cart-items absolute top-20 right-0 z-20 bg-white border border-black p-4 min-w-[300px]">
         <div className="text-xl"><h2>Your items:</h2></div>
+        <hr></hr>
         <CartItemsList cartItems={cartItems} />
+        <hr></hr>
+        <button onClick={showCartObject} className="p-4 bg-blue min-w-full">Check out</button>
       </div>
       </>
     )
