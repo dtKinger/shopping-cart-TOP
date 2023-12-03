@@ -6,33 +6,49 @@ export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(1);
   const [cartItems, setCartItems] = useOutletContext();
 
-  const handleAddToCart = (cartItems) => {
+  const handleAddToCart = () => {
     
     console.log(quantity)
     // Get the product that was clicked Add to Cart
     let stagedProduct = allProducts.filter((item => item.id == productId))[0];
-    // Create a staging product with Quantity property to prepare for the Cart add.
+    // a big safety check before doing a lot of things
     if (stagedProduct) {
+      // Create a staging product with Quantity property to prepare for the Cart add.
       stagedProduct = {
         ...stagedProduct,
         "quantity": quantity // Add the quantity property to the product
       };
-    };
 
-    // Add the stagedProduct to the Cart (cartItems state)
-    if (stagedProduct){
+      // Check how we're going to handle the stagedProduct
+      // If that productId is NOT already in the cart
+      const isInCart = (item) => item.id == productId
+      if (!cartItems.some(isInCart)){
+      // Add the stagedProduct to the Cart (cartItems state)
       setCartItems((prev) => [
         ...prev,
         stagedProduct,
-      ])
+      ]);
+    } else if (cartItems.some(isInCart)){
+      // Compare stagedProduct to the cartItems. Find the match then sum it's quantity
+
     }
+
+    };
+
+
+      
+      // // If that productId is ALREADY in the cart
+      // } else if (cartItems.some(isInCart)){
+
+      // }
+
     
 
-    // If that productId isn't already in the cart
-    // if (!cartItems.some(item => item.id == productId)){
-    //   // Set the quantity
-    //   setCartItems(stagedToAdd)
-    // }
+
+    
+    
+
+    
 
     // If that productId is already in cart
     // if (){

@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Cart ({cartItems}) {
 
   const [isOpen, setIsOpen] = useState(false)
-  // Show this as an after element?
+  const [cartCount, setCartCount] = useState(0);
   
-  let cartCount = cartItems.length;
+  if (cartItems && cartItems.length > 0) {
+    useEffect(() => {
+      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
+      setCartCount(totalItems);
+    }, [cartItems])
+  };
 
   const CartButton = () => {
     return (
