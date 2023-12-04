@@ -4,11 +4,9 @@ import allProducts from "../data/products.json";
 
 export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(1);
-  const [cartItems, setCartItems] = useOutletContext();
 
   const handleAddToCart = () => {
     
-    console.log(quantity)
     // Get the product that was clicked Add to Cart
     let stagedProduct = allProducts.filter((item => item.id == productId))[0];
     // a big safety check before doing a lot of things

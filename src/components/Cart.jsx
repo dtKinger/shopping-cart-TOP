@@ -51,12 +51,17 @@ export default function Cart ({cartItems}) {
 
 const CartItemsList = ({cartItems}) => {
 
-  const inCartDecrement = () => {
-    console.log(`It logs ${item.id}`)
+  const inCartDecrement = (productId) => {
+    const productForAdjustment = cartItems.filter((item) => item.id == productId)
+    
+    productForAdjustment.quantity -= 1
+    console.log(productForAdjustment)
   }
 
-  const inCartIncrement = () => {
-    
+  const inCartIncrement = (productId) => {
+    const productForAdjustment = cartItems.filter((item) => item.id == productId)
+    productForAdjustment.quantity += 1 
+    console.log(productForAdjustment)
   }
   
   if (cartItems !== null){
@@ -76,11 +81,11 @@ const CartItemsList = ({cartItems}) => {
           </div>
           <div className="right-side min-w-max p-2 flex items-center justify-center">
             <div className="in-cart-quantities">
-              <button onClick={inCartDecrement} className="adjustment-btn decrement py-0 px-2">&minus;</button>
+              <button onClick={() => inCartDecrement(item.id)} className="adjustment-btn decrement py-0 px-2">&minus;</button>
               <span className="relative mx-2 text-center bg-green-500 text-white rounded-[50%] inline-block h-[24px] w-[24px]">
                 {item.quantity}
               </span>
-              <button onClick={inCartIncrement} className="adjustment-btn increment py-0 px-2">+</button>
+              <button onClick={() => inCartIncrement(item.id)} className="adjustment-btn increment py-0 px-2">+</button>
               <span className="text-red-500 p-2">Remove</span>
             </div>
           </div>
