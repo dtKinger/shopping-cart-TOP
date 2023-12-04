@@ -61,9 +61,16 @@ const CartItemsList = ({cartItems}) => {
       }
       
       return (
-        <li key={item.id}><span className="
-        relative text-center bg-green-500 text-white pl-1 pr-1 rounded-[50%]"
-        >{item.quantity}</span> {item.title} - $&nbsp;{item.price}</li>
+        <li key={item.id} className="min-w-full flex justify-between">
+          <div className="left-side flex flex-nowrap items-center justify-left p-2">
+          <span className="p-2">{item.title} - $&nbsp;{item.price}</span>
+          </div>
+          <div className="right-side p-2 flex items-center justify-center">
+          <span className="relative text-center bg-green-500 text-white pl-1 pr-1 rounded-[50%] w-6 h-6">{item.quantity}
+          </span>
+          <span className="text-red-500 p-2">Remove</span>
+          </div>
+        </li>
       )  
     })
 
