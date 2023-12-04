@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import "../styles/cart.css"
 
 export default function Cart ({cartItems}) {
 
@@ -32,12 +33,12 @@ export default function Cart ({cartItems}) {
     return (
       <>
       <CartButton />
-      <div className="cart-items absolute top-20 right-0 z-20 bg-white border border-black p-4 min-w-[300px]">
+      <div className="cart-items clamp-width absolute top-20 right-0 z-20 bg-white border border-black p-4">
         <div className="text-xl"><h2>Your items:</h2></div>
         <hr></hr>
         <CartItemsList cartItems={cartItems} />
         <hr></hr>
-        <button onClick={showCartObject} className="p-4 bg-blue min-w-full">Check out</button>
+        <button onClick={showCartObject} className="p-4 bg-blue-600 min-w-full">Check out</button>
       </div>
       </>
     )

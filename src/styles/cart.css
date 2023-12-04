@@ -1,0 +1,3 @@
+.clamp-width{
+  width: clamp(350px, 600px, 90vw);
+}
