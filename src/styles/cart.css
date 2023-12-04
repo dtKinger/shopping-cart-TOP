@@ -1,3 +1,10 @@
 .clamp-width{
   width: clamp(350px, 600px, 90vw);
 }
+
+.cart-list-hr:not(:last-child){
+  min-width: 100px;
+  max-width: 200px;
+  border: 1px dotted lightgray;
+  margin: 0 auto;
+}

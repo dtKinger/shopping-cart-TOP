@@ -61,6 +61,7 @@ const CartItemsList = ({cartItems}) => {
       }
       
       return (
+        <>
         <li key={item.id} className="min-w-full flex justify-between">
           <div className="left-side flex flex-nowrap items-center justify-left p-2">
           <span className="p-2">{item.title} - $&nbsp;{item.price * item.quantity}</span>
@@ -71,6 +72,8 @@ const CartItemsList = ({cartItems}) => {
           <span className="text-red-500 p-2">Remove</span>
           </div>
         </li>
+        <hr className="cart-list-hr"></hr>
+        </>
       )  
     })
 
@@ -79,7 +82,9 @@ const CartItemsList = ({cartItems}) => {
         <ul>
           {cartItemsList}
         </ul>
-        <p>Subtotal is: $&nbsp;{subtotal}</p>
+        <hr className="p-4"></hr>
+        <p className="font-bold">Subtotal is: $&nbsp;{subtotal}</p>
+        <hr className="p-4"></hr>
       </>
     )
   }
