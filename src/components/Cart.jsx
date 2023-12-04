@@ -50,6 +50,14 @@ export default function Cart ({cartItems}) {
 }
 
 const CartItemsList = ({cartItems}) => {
+
+  const inCartDecrement = () => {
+    console.log(`It logs ${item.id}`)
+  }
+
+  const inCartIncrement = () => {
+    
+  }
   
   if (cartItems !== null){
     let subtotal = 0;
@@ -61,22 +69,24 @@ const CartItemsList = ({cartItems}) => {
       }
       
       return (
-        <>
-        <li key={item.id} className="min-w-full flex justify-between">
+        <div key={item.id}>
+        <li className="min-w-full flex justify-between">
           <div className="left-side flex items-center justify-left p-2">
           <span className="p-2">{item.title} - $&nbsp;{item.price * item.quantity}</span>
           </div>
           <div className="right-side min-w-max p-2 flex items-center justify-center">
             <div className="in-cart-quantities">
-              <span className="relative text-center bg-green-500 text-white rounded-[50%] inline-block h-[24px] w-[24px]">
+              <button onClick={inCartDecrement} className="adjustment-btn decrement py-0 px-2">&minus;</button>
+              <span className="relative mx-2 text-center bg-green-500 text-white rounded-[50%] inline-block h-[24px] w-[24px]">
                 {item.quantity}
               </span>
+              <button onClick={inCartIncrement} className="adjustment-btn increment py-0 px-2">+</button>
               <span className="text-red-500 p-2">Remove</span>
             </div>
           </div>
         </li>
         <hr className="cart-list-hr"></hr>
-        </>
+        </div>
       )  
     })
 
