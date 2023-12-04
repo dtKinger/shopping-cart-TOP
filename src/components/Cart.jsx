@@ -63,13 +63,16 @@ const CartItemsList = ({cartItems}) => {
       return (
         <>
         <li key={item.id} className="min-w-full flex justify-between">
-          <div className="left-side flex flex-nowrap items-center justify-left p-2">
+          <div className="left-side flex items-center justify-left p-2">
           <span className="p-2">{item.title} - $&nbsp;{item.price * item.quantity}</span>
           </div>
-          <div className="right-side p-2 flex items-center justify-center">
-          <span className="relative text-center bg-green-500 text-white pl-1 pr-1 rounded-[50%] w-6 h-6">{item.quantity}
-          </span>
-          <span className="text-red-500 p-2">Remove</span>
+          <div className="right-side min-w-max p-2 flex items-center justify-center">
+            <div className="in-cart-quantities">
+              <span className="relative text-center bg-green-500 text-white rounded-[50%] inline-block h-[24px] w-[24px]">
+                {item.quantity}
+              </span>
+              <span className="text-red-500 p-2">Remove</span>
+            </div>
           </div>
         </li>
         <hr className="cart-list-hr"></hr>
