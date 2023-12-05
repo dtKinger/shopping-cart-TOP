@@ -68,11 +68,11 @@ const CartItemsList = ({cartItems, onUpdate}) => {
           </div>
           <div className="right-side min-w-max p-2 flex items-center justify-center">
             <div className="in-cart-quantities">
-              <button onClick={onUpdate} className="adjustment-btn decrement py-0 px-2">&minus;</button>
+              <button onClick={(e) => onUpdate(e, item.id)} className="adjustment-btn decrement py-0 px-2">&minus;</button>
               <span className="relative mx-2 text-center bg-green-500 text-white rounded-[50%] inline-block h-[24px] w-[24px]">
                 {item.quantity}
               </span>
-              <button onClick={() => onUpdate(item.id)} className="adjustment-btn increment py-0 px-2">+</button>
+              <button onClick={(e) => onUpdate(e, item.id)} className="adjustment-btn increment py-0 px-2">+</button>
               <span className="text-red-500 p-2">Remove</span>
             </div>
           </div>
