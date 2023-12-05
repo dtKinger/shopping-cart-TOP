@@ -5,6 +5,13 @@ export default function Cart ({cartItems, onUpdate}) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [cartCount, setCartCount] = useState(0);
+
+  if (cartItems && cartItems.length > 0) {
+    useEffect(() => {
+      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
+      setCartCount(totalItems);
+    }, [cartItems])
+  };
   
   const showCartObject = () => {
     alert(`
@@ -13,40 +20,33 @@ export default function Cart ({cartItems, onUpdate}) {
     `)
   }
   
-  if (cartItems && cartItems.length > 0) {
-    useEffect(() => {
-      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
-      setCartCount(totalItems);
-    }, [cartItems])
+  const toggleCart = () => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
-  const CartButton = () => {
-    return (
+  return (
+    <div>
       <div className="my-cart">
-        <button onClick={() => setIsOpen(!isOpen)}>Cart</button>
-        <span className="relative top-5 right-5 bg-blue-500 text-white pt-1 pr-2 pb-1 pl-2 rounded-[50%]">{cartCount}</span>
+        <button onClick={toggleCart}>Cart</button>
+        <span className="relative top-5 right-5 bg-blue-500 text-white pt-1 pr-2 pb-1 pl-2 rounded-[50%]">
+          {cartCount}
+        </span>
       </div>
-    )
-  }
-
-  if (isOpen){
-    return (
-      <>
-      <CartButton />
-      <div className="cart-items clamp-width absolute top-20 right-0 z-20 bg-white border border-black p-4">
-        <div className="text-xl"><h2>Your items:</h2></div>
-        <hr></hr>
-        <CartItemsList cartItems={cartItems} onUpdate={onUpdate} />
-        <hr></hr>
-        <button onClick={showCartObject} className="p-4 bg-blue-600 min-w-full">Check out</button>
-      </div>
-      </>
-    )
-  } else return (
-    <>
-      <CartButton />
-    </>
-  )
+      {isOpen && (
+        <div className="cart-items clamp-width absolute top-20 right-0 z-20 bg-white border border-black p-4">
+          <div className="text-xl">
+            <h2>Your items:</h2>
+          </div>
+          <hr></hr>
+          <CartItemsList cartItems={cartItems} onUpdate={onUpdate} />
+          <hr></hr>
+          <button onClick={showCartObject} className="p-4 bg-blue-600 min-w-full">
+            Check out
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 const CartItemsList = ({cartItems, onUpdate}) => {
