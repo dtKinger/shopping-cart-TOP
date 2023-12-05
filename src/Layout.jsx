@@ -6,17 +6,19 @@ import {Link, Outlet} from "react-router-dom";
 export function Layout () {
   const [cartItems, setCartItems] = useState([])
   const updateProductQuantity = (e, productId) => {
-    console.log(e.target.textContent)
-    if (e.target.textContent == '−'){
-      const productForAdjustment = cartItems.filter((item) => item.id == productId)
-      productForAdjustment.quantity -= 1
-      console.log(productForAdjustment)
-    } else if (e.target.textContent == '+'){
-      const productForAdjustment = cartItems.filter((item) => item.id == productId)
-      productForAdjustment.quantity += 1 
-      console.log(productForAdjustment)
-    }
-  }
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === productId) {
+        if (e.target.textContent === '−') {
+          return { ...item, quantity: item.quantity - 1 };
+        } else if (e.target.textContent === '+') {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+      }
+      return item;
+    });
+  
+    setCartItems(updatedCartItems);
+  };
 
   return (
     <>
