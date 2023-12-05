@@ -5,6 +5,7 @@ import NavContainer from "./components/NavContainer";
 
 export function Layout () {
   const [cartItems, setCartItems] = useState([])
+
   const updateProductQuantity = (e, productId) => {
     const updatedCartItems = cartItems.map((item) => {
       if (item.id === productId) {
@@ -16,13 +17,19 @@ export function Layout () {
       }
       return item;
     });
-  
     setCartItems(updatedCartItems);
   };
 
+  const removeFromCart = (e, productId)  => {
+    // Create an array with every product except the one user clicked
+    const slicedCartItems = cartItems.filter((item) => item.id !== productId)
+    // Rewrite state with new array to exclude that product
+    setCartItems(slicedCartItems);
+  }
+
   return (
     <>
-      <NavContainer cartItems={cartItems} onUpdate={updateProductQuantity} />
+      <NavContainer cartItems={cartItems} onUpdate={updateProductQuantity} onRemove={removeFromCart}/>
       <GhostNav />
       <Outlet context={[cartItems, setCartItems]}/>  
     </>

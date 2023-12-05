@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "../styles/cart.css"
 
-export default function Cart ({cartItems, onUpdate}) {
+export default function Cart ({cartItems, onUpdate, onRemove}) {
 
   const [isOpen, setIsOpen] = useState(false)
   const [cartCount, setCartCount] = useState(0);
@@ -36,7 +36,7 @@ export default function Cart ({cartItems, onUpdate}) {
             <h2>Your items:</h2>
           </div>
           <hr></hr>
-          <CartItemsList cartItems={cartItems} onUpdate={onUpdate} />
+          <CartItemsList cartItems={cartItems} onUpdate={onUpdate} onRemove={onRemove} />
           <hr></hr>
           <button onClick={showCartObject} className="p-4 bg-blue-600 min-w-full">
             Check out
@@ -47,7 +47,7 @@ export default function Cart ({cartItems, onUpdate}) {
   );
 }
 
-const CartItemsList = ({cartItems, onUpdate}) => {
+const CartItemsList = ({cartItems, onUpdate, onRemove}) => {
   
   if (cartItems !== null){
     let subtotal = 0;
@@ -71,7 +71,7 @@ const CartItemsList = ({cartItems, onUpdate}) => {
                 {item.quantity}
               </span>
               <button onClick={(e) => onUpdate(e, item.id)} className="adjustment-btn increment py-0 px-2">+</button>
-              <span className="text-red-500 p-2">Remove</span>
+              <span onClick={(e) => onRemove(e, item.id)} className="text-red-500 p-2">Remove</span>
             </div>
           </div>
         </li>

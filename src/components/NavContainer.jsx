@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import Cart from "./Cart"
 
-export default function NavContainer ({cartItems, onUpdate}) {
+export default function NavContainer ({cartItems, onUpdate, onRemove}) {
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function NavContainer ({cartItems, onUpdate}) {
         <li><Link to="/pages/about">About Us</Link></li>
       </ul>
     </nav>
-    <Cart cartItems={cartItems} onUpdate={onUpdate} />
+    <Cart cartItems={cartItems} onUpdate={onUpdate} onRemove={onRemove} />
     </div>
     </>
   )
