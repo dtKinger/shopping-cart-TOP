@@ -6,12 +6,10 @@ export default function Cart ({cartItems, onUpdate}) {
   const [isOpen, setIsOpen] = useState(false)
   const [cartCount, setCartCount] = useState(0);
 
-  
-    useEffect(() => {
-      let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
-      setCartCount(totalItems);
-    }, [cartItems])
-  
+  useEffect(() => {
+    let totalItems = cartItems.reduce((total, item) => total + item.quantity, 0)
+    setCartCount(totalItems);
+  }, [cartItems])
   
   const showCartObject = () => {
     alert(`
