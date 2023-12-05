@@ -8,9 +8,9 @@ export function Layout () {
   const updateProductQuantity = (e, productId) => {
     const updatedCartItems = cartItems.map((item) => {
       if (item.id === productId) {
-        if (e.target.textContent === '−') {
+        if (e.target.textContent === '−' && item.quantity > 1) {
           return { ...item, quantity: item.quantity - 1 };
-        } else if (e.target.textContent === '+') {
+        } else if (e.target.textContent === '+' && item.quantity < 101) {
           return { ...item, quantity: item.quantity + 1 };
         }
       }
