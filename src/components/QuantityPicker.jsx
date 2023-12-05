@@ -4,6 +4,7 @@ import allProducts from "../data/products.json";
 
 export default function QuantityPicker ({productId}) {
   const [quantity, setQuantity] = useState(1);
+  const [cartItems, setCartItems] = useOutletContext();
 
   const handleAddToCart = () => {
     

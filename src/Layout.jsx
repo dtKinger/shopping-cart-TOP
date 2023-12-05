@@ -8,14 +8,14 @@ export function Layout () {
 
   return (
     <>
-      <Navcontainer cartItems={cartItems} />
+      <Navcontainer />
       <GhostNav />
       <Outlet context={[cartItems, setCartItems]}/>  
     </>
   )
 
 
-  function Navcontainer ({cartItems}) {
+  function Navcontainer () {
 
     return (
       <>
