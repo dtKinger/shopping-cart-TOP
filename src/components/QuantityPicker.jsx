@@ -34,20 +34,10 @@ export default function QuantityPicker ({productId}) {
 
     };
 
-
-      
       // // If that productId is ALREADY in the cart
       // } else if (cartItems.some(isInCart)){
 
       // }
-
-    
-
-
-    
-    
-
-    
 
     // If that productId is already in cart
     // if (){
@@ -61,19 +51,19 @@ export default function QuantityPicker ({productId}) {
     
     <div className="right flex gap-2">
       <button className="pt-0 pr-2 pb-0 pl-2 border border-black" onClick={() => {
+        if (quantity > 1) {
+          setQuantity(quantity - 1)
+        }}}>
+          &minus;
+      </button>
+      <input className="max-w-[3rem] text-center border border-black rounded-[50%]" type="text" value={quantity} onChange={(e) => setQuantity((e.target.value))}/>
+      <button className="pt-0 pr-2 pb-0 pl-2 border border-black" onClick={() => {
         if (quantity < 101){
           setQuantity(quantity + 1)
         }    
         }}>
           +
         </button>
-      <input className="max-w-[3rem] text-center border border-black rounded-[50%]" type="text" value={quantity} onChange={(e) => setQuantity((e.target.value))}/>
-      <button className="pt-0 pr-2 pb-0 pl-2 border border-black" onClick={() => {
-        if (quantity > 1) {
-          setQuantity(quantity - 1)
-        }}}>
-          &minus;
-      </button>
     </div>
     <div className="left flex max-max"><button className="pt-2 pr-4 pb-2 pl-4 border border-black" onClick={handleAddToCart}>Add to Cart</button></div>
   </div>
